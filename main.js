@@ -404,23 +404,31 @@
 
     const mm = gsap.matchMedia();
 
-    // Large screens: the reel grows from a card to the full screen while pinned.
+    // Large screens: the reel grows from a corner card to its full size, centred, while pinned.
+    // The frame keeps the video's shape so nothing is cropped, and the zoom finishes
+    // before the pin releases so it can never still be moving as the section leaves.
     mm.add('(min-width: 900px) and (min-aspect-ratio: 1/1)', () => {
-      const vw = () => root.clientWidth;
-      const vh = () => window.innerHeight;
-      const startW = () => vw() * 0.44;
-      const startH = () => startW() / 2.3;
-      gsap.set(reelBox, { right: 'auto', bottom: 'auto', aspectRatio: 'auto' });
+      reelBox.classList.add('is-zoom');
+      const startScale = () => (root.clientWidth * 0.44) / reelBox.offsetWidth;
+      const startX = () => root.clientWidth * 0.96 - (reelBox.offsetWidth * startScale()) / 2 - root.clientWidth / 2;
+      const startY = () => {
+        const stageH = reelBox.parentElement.clientHeight;
+        return stageH * 0.94 - (reelBox.offsetHeight * startScale()) / 2 - stageH / 2;
+      };
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: '.stage', start: 'top top', end: '+=130%', pin: true, scrub: 0.6, invalidateOnRefresh: true },
+        scrollTrigger: { trigger: '.stage', start: 'top top', end: '+=150%', pin: true, scrub: true, invalidateOnRefresh: true },
       });
       tl.fromTo(reelBox,
-        { left: () => vw() * 0.96 - startW(), top: () => vh() * 0.94 - startH(), width: startW, height: startH, borderRadius: 22 },
-        { left: 0, top: 0, width: vw, height: vh, borderRadius: 0, ease: 'power2.inOut', duration: 1 }, 0)
-        .to('.headline', { yPercent: -18, opacity: 0.0, ease: 'power1.in', duration: 0.7 }, 0)
-        .to('.stage-meta', { opacity: 0, duration: 0.25 }, 0)
-        .to('.reel-caption', { opacity: 1, duration: 0.2 }, 0.85);
-      return () => gsap.set(reelBox, { clearProps: 'all' });
+        { x: startX, y: startY, scale: startScale, borderRadius: () => 22 / startScale() },
+        { x: 0, y: 0, scale: 1, borderRadius: 0, ease: 'power2.inOut', duration: 0.8 }, 0)
+        .to('.headline', { yPercent: -18, opacity: 0, ease: 'power1.in', duration: 0.55 }, 0)
+        .to('.stage-meta', { opacity: 0, duration: 0.2 }, 0)
+        .to('.reel-caption', { opacity: 1, duration: 0.15 }, 0.7)
+        .to({}, { duration: 0.2 }, 0.8);
+      return () => {
+        reelBox.classList.remove('is-zoom');
+        gsap.set(reelBox, { clearProps: 'all' });
+      };
     });
 
     // Intro lights up word by word.
@@ -517,7 +525,7 @@
   setupMotion();
   gsap.set('.char', { yPercent: 115 });
   gsap.set('.stage-meta > *', { y: 18, opacity: 0 });
-  gsap.set(reelBox, { opacity: 0, scale: 0.92, transformOrigin: '100% 100%' });
+  gsap.set(reelBox, { opacity: 0 });
   gsap.set('.top', { opacity: 0 });
 
   const ready = Promise.race([
@@ -541,7 +549,7 @@
     const tl = gsap.timeline({ onComplete: () => { curtain.remove(); if (lenis) lenis.start(); } });
     tl.to(curtain, { yPercent: -100, duration: 0.85, ease: 'expo.inOut' })
       .to('.char', { yPercent: 0, duration: 0.95, stagger: 0.016, ease: 'expo.out' }, '-=0.42')
-      .to(reelBox, { opacity: 1, scale: 1, duration: 1, ease: 'expo.out', clearProps: 'scale,transformOrigin' }, '-=0.95')
+      .to(reelBox, { opacity: 1, duration: 1, ease: 'power2.out' }, '-=0.95')
       .to('.stage-meta > *', { y: 0, opacity: 1, stagger: 0.08, duration: 0.7, ease: 'power3.out' }, '-=0.75')
       .to('.top', { opacity: 1, duration: 0.6 }, '-=0.6');
   });

@@ -73,6 +73,7 @@ img,video{display:block;width:100%}
 .status i{width:.6em;height:.6em;border-radius:50%;background:#59e36f;box-shadow:0 0 0 0 rgba(89,227,111,.55);animation:ping 2.2s infinite}
 @keyframes ping{70%,100%{box-shadow:0 0 0 .7em rgba(89,227,111,0)}}
 .reel{position:absolute;right:4vw;bottom:6vh;width:44vw;aspect-ratio:2.3;overflow:hidden;border-radius:var(--radius);background:#17151f;z-index:2;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+.reel.is-zoom{inset:0;margin:auto;width:min(100%,calc(100vh*2.32));aspect-ratio:2.32;will-change:transform}
 .reel video{position:absolute;inset:0;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
 .reel video.on{opacity:1}
 .reel-caption{position:absolute;inset:auto 0 0;z-index:2;display:flex;justify-content:space-between;padding:clamp(14px,2.2vw,30px) var(--gutter);font-weight:600;opacity:0;background:linear-gradient(transparent,rgba(0,0,0,.55))}
