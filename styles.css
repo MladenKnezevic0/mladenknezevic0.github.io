@@ -102,7 +102,7 @@ img,video{display:block;width:100%}
 
 .media-card{position:relative;display:block;width:100%;overflow:hidden;border-radius:var(--radius);background:#17151f;text-align:left}
 .media-card video,.media-card img{will-change:transform}
-.card-main{aspect-ratio:2.31}
+.card-main{aspect-ratio:var(--ratio,2.31);max-width:calc(80vh*var(--ratio,2.31));margin-inline:auto}
 .card-main video{height:100%;object-fit:cover}
 .play-chip{position:absolute;left:clamp(10px,1.4vw,20px);bottom:clamp(10px,1.4vw,20px);display:inline-flex;align-items:center;gap:.55em;padding:.6em 1em;border-radius:99px;background:rgba(11,10,15,.72);font-weight:600;font-size:.9rem;backdrop-filter:blur(8px);transition:transform .35s var(--ease),background .25s}
 .play-chip::before{content:"";border-left:.62em solid currentColor;border-block:.4em solid transparent}

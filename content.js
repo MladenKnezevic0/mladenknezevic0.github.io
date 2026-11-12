@@ -31,7 +31,7 @@ window.PORTFOLIO = {
   ],
 
   // Words in the moving band between projects.
-  marquee: ["Shops", "Crafting", "Class select", "Quests", "Seasonal themes", "Menus", "Motion"],
+  marquee: ["Shops", "Crafting", "Class select", "Quests", "Emote wheel", "Seasonal themes", "Menus", "Motion"],
 
   projects: [
     {
@@ -50,6 +50,20 @@ window.PORTFOLIO = {
         { src: "media/still-desert-classes.jpg", alt: "Class select with a grid of classes and a starter tools and perks panel", size: "wide" },
         { src: "media/still-desert-party.jpg", alt: "Create Party window with party size buttons", size: "a7" },
         { src: "media/still-desert-quests.jpg", alt: "Quest board with a quest header, star ratings and a grid of quests", size: "a5" },
+      ],
+    },
+    {
+      title: "Emote Wheel",
+      label: "UI project",
+      description: "A radial emote menu in a dark, glassy blue style: eight quick-play slots, five pages to flip through and clear hover and selected states.",
+      tags: ["Radial menu", "Emotes", "Hover states", "Paging"],
+      video: "media/work-04.mp4",
+      poster: "media/work-04-poster.jpg",
+      colors: ["#1f4fd8", "#0f8fb8"],
+      photos: [
+        { src: "media/still-emote-wheel.jpg", alt: "Emote wheel on page 1 of 5 with Wave, Groove, Dance and Cheer emotes", size: "third" },
+        { src: "media/still-emote-slot.jpg", alt: "Emote wheel with an empty slot highlighted under the cursor", size: "third" },
+        { src: "media/still-emote-page-two.jpg", alt: "Emote wheel after flipping to page 2", size: "third" },
       ],
     },
     {

@@ -99,11 +99,12 @@
     if (p.video) {
       const card = el('button', 'media-card card-main');
       card.type = 'button';
-      card.setAttribute('aria-label', `Play ${p.title} video with sound`);
+      card.setAttribute('aria-label', `Play ${p.title} video${p.silent ? '' : ' with sound'}`);
       card.dataset.view = 'video';
       card.dataset.src = p.video;
       card.dataset.poster = p.poster || '';
-      card.dataset.cursor = 'Play with sound';
+      card.dataset.cursor = p.silent ? 'Watch' : 'Play with sound';
+      if (p.ratio) card.style.setProperty('--ratio', p.ratio);
       card.append(makeVideo(p.video, p.poster));
       card.lastChild.loop = true;
       card.lastChild.dataset.auto = '';
