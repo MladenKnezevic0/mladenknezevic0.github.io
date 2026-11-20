@@ -31,7 +31,7 @@ window.PORTFOLIO = {
   ],
 
   // Words in the moving band between projects.
-  marquee: ["Shops", "Crafting", "Class select", "Quests", "Emote wheel", "Seasonal themes", "Menus", "Motion"],
+  marquee: ["Shops", "Crafting", "Class select", "Quests", "Battle pass", "Emote wheel", "Seasonal themes", "Menus", "Motion"],
 
   projects: [
     {
@@ -50,6 +50,23 @@ window.PORTFOLIO = {
         { src: "media/still-desert-classes.jpg", alt: "Class select with a grid of classes and a starter tools and perks panel", size: "wide" },
         { src: "media/still-desert-party.jpg", alt: "Create Party window with party size buttons", size: "a7" },
         { src: "media/still-desert-quests.jpg", alt: "Quest board with a quest header, star ratings and a grid of quests", size: "a5" },
+      ],
+    },
+    {
+      title: "Full Game Menu Set",
+      label: "UI project",
+      description: "A complete menu set for a unit-collecting battle game: store with bundles and currency, quests, areas, codes, daily rewards, settings and a battle pass, each with its own colour theme.",
+      tags: ["Store", "Quests", "Daily rewards", "Battle pass", "Settings"],
+      video: "media/work-06.mp4",
+      poster: "media/work-06-poster.jpg",
+      colors: ["#c2185b", "#12a37a"],
+      photos: [
+        { src: "media/still-ui-store.jpg", alt: "Store menu on the currency tab with gem and coin packs and a purchase notification", size: "half" },
+        { src: "media/still-ui-quests.jpg", alt: "Quests menu with a reward progress bar and daily quest list", size: "half" },
+        { src: "media/still-ui-areas.jpg", alt: "Areas menu with area cards and a teleport button", size: "half" },
+        { src: "media/still-ui-daily.jpg", alt: "Daily rewards menu with a seven day login streak and a grand prize", size: "half" },
+        { src: "media/still-ui-settings.jpg", alt: "Settings menu with volume sliders and toggles", size: "half" },
+        { src: "media/still-ui-battlepass.jpg", alt: "Battle pass menu with free and premium reward tiers", size: "half" },
       ],
     },
     {
