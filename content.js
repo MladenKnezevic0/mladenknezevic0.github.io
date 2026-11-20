@@ -19,7 +19,7 @@ window.PORTFOLIO = {
   intro: "I design and animate Roblox interfaces, from shops to crafting benches, so your game feels finished from the very first click. Everything here was made for real client games.",
 
   // Your Discord username. The contact section stays hidden until this is filled in.
-  discord: "nightydev.",
+  discord: "mlden",
 
   // Optional extra links, for example: { label: "Roblox", url: "https://www.roblox.com/users/..." }
   links: [],
