@@ -31,7 +31,7 @@ window.PORTFOLIO = {
   ],
 
   // Words in the moving band between projects.
-  marquee: ["Shops", "Crafting", "Class select", "Quests", "Battle pass", "Emote wheel", "Seasonal themes", "Menus", "Motion"],
+  marquee: ["Shops", "Crafting", "Class select", "Quests", "Battle pass", "Matchmaking", "Emote wheel", "Seasonal themes", "Menus", "Motion"],
 
   projects: [
     {
@@ -67,6 +67,24 @@ window.PORTFOLIO = {
         { src: "media/still-ui-daily.jpg", alt: "Daily rewards menu with a seven day login streak and a grand prize", size: "half" },
         { src: "media/still-ui-settings.jpg", alt: "Settings menu with volume sliders and toggles", size: "half" },
         { src: "media/still-ui-battlepass.jpg", alt: "Battle pass menu with free and premium reward tiers", size: "half" },
+      ],
+    },
+    {
+      title: "Sports Game Menus",
+      label: "UI project",
+      description: "A dark red menu system for a competitive sports game: main menu, player builds, a step by step build creator, attributes, matchmaking, daily tasks and a season pass.",
+      tags: ["Main menu", "Build creator", "Matchmaking", "Season pass", "Dark theme"],
+      video: "media/work-07.mp4",
+      poster: "media/work-07-poster.jpg",
+      colors: ["#b3122e", "#6a1226"],
+      photos: [
+        { src: "media/still-sports-main-menu.jpg", alt: "Main menu with five tall cards for play now, my player, training, matchmaking and sports complex", size: "wide" },
+        { src: "media/still-sports-play-now.jpg", alt: "Play now screen with saved player builds and a delete build confirmation", size: "half" },
+        { src: "media/still-sports-build-creator.jpg", alt: "Build creator on the potential step with a stat comparison", size: "half" },
+        { src: "media/still-sports-attributes.jpg", alt: "Attributes screen with stat bars, caps and coin costs", size: "half" },
+        { src: "media/still-sports-matchmaking.jpg", alt: "Matchmaking screen with game mode tabs and a choice of preset characters", size: "half" },
+        { src: "media/still-sports-daily-tasks.jpg", alt: "Daily tasks screen with a coin reward and a list of tasks with progress bars", size: "half" },
+        { src: "media/still-sports-season-pass.jpg", alt: "Season pass screen with free and premium reward tracks", size: "half" },
       ],
     },
     {
